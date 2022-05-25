@@ -6,7 +6,7 @@
 #include<string>
 #include <chrono>
 using namespace std;
-void task(string tname,int x)
+void task1(string tname,int x)
 {
 	for (int i=0;i<=x;i++)
 	{
@@ -14,11 +14,19 @@ void task(string tname,int x)
 		this_thread::sleep_for(chrono::seconds(1));
 	}
 }
+void task2(string tname, int x)
+{
+	for (int i = 0; i <= x; i++)
+	{
+		cout << tname << "--->" << i << endl;
+		this_thread::sleep_for(chrono::seconds(1));
+	}
+}
 int main()
 {
 	thread t1,t2;
-	t1 = thread(task, "Thread-1", 10);
-	t2 = thread(task, "Thread-2", 20);
+	t1 = thread(task1, "Thread-1", 10);
+	t2 = thread(task2, "Thread-2", 20);
 	t1.join();
 	t2.join();
     cout << "Hello World!\n";
