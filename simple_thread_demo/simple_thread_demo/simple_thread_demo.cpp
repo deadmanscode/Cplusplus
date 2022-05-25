@@ -11,7 +11,7 @@ void task(string tname,int x)
 	for (int i=0;i<=x;i++)
 	{
 		cout << tname<< "--->" << i << endl;
-		this_thread::sleep_for(chrono::seconds(5));
+		this_thread::sleep_for(chrono::seconds(1));
 	}
 }
 int main()
