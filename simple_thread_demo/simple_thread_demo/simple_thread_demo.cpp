@@ -24,12 +24,15 @@ void task2(string tname, int x)
 }
 int main()
 {
-	thread t1,t2;
+	thread t1,t2,t3,t4;
 	t1 = thread(task1, "Thread-1", 10);
-	t2 = thread(task2, "Thread-2", 20);
+	t2 = thread(task2, "Thread-2", 10);
+	t3 = thread(task1, "Thread-A", 10);
+	t4 = thread(task2, "Thread-B", 10);
 	t1.join();
 	t2.join();
-    cout << "Hello World!\n";
+	t3.join();
+	t4.join();
 }
 //test to pull from Github 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
